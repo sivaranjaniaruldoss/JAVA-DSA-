@@ -150,13 +150,43 @@ public class AnagramTest {
 ```
 
 ---
+# Problem: Sum of Suffix Numbers
 
-## Quick Checklist for Using the Code
+## Description
+Given a positive integer `n`, calculate the sum of all suffix numbers formed from its digits.  
+A suffix number is defined as the last *k* digits of `n`, where `k` ranges from 1 up to the total number of digits in `n`.
 
-1. Choose **Sort** if you prefer simplicity and your strings are short.
-2. Choose **Count** for large strings or performance-critical paths.
-3. Use **Unicode fallback** when inputs may contain non-ASCII characters.
-4. Normalize input (remove spaces, punctuation if needed) consistently.
+### Example
+- Input: `1653`  
+- Suffixes: `3, 53, 653, 1653`  
+- Sum = `3 + 53 + 653 + 1653 = 2362`  
+- Output: `2362`
+
+## Constraints
+
+- Input is a positive integer.
+
+## Solution (Java)
+```java
+public class SuffixSum {
+    public static int sumOfSuffixes(int num) {
+        int sum = num;
+        int divisor = 10;
+        while (divisor <= num) {
+            sum += num % divisor;
+            divisor *= 10;
+        }
+        return sum;
+    }
+
+    public static void main(String[] args) {
+        int num = 1653;
+        System.out.println(sumOfSuffixes(num)); 
+    }
+}
+
+
+
 
 ---
 
