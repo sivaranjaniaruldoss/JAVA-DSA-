@@ -184,6 +184,209 @@ public class SuffixSum {
         System.out.println(sumOfSuffixes(num)); 
     }
 }
+```
+
+---
+## while loop
+
+## Problem 1: Print numbers from 1 to N
+
+Input: `5`  
+Output: `1 2 3 4 5`
+
+```java
+int n = 5;
+int i = 1;
+
+while (i <= n) {
+    System.out.print(i + " ");
+    i++;
+}
+````
+
+---
+
+## Problem 2: Print numbers from N to 1
+
+Input: `5`
+Output: `5 4 3 2 1`
+
+```java
+int n = 5;
+
+while (n >= 1) {
+    System.out.print(n + " ");
+    n--;
+}
+```
+
+---
+
+## Problem 3: Count digits in a number
+
+Input: `78452`
+Output: `5`
+
+```java
+int n = 78452;
+int count = 0;
+
+while (n > 0) {
+    count++;
+    n = n / 10;
+}
+
+System.out.println(count);
+```
+
+---
+
+## Problem 4: Sum of digits
+
+Input: `345`
+Output: `12`
+
+```java
+int n = 345;
+int sum = 0;
+
+while (n > 0) {
+    sum = sum + n % 10;
+    n = n / 10;
+}
+
+System.out.println(sum);
+```
+
+---
+
+## Problem 5: Reverse a number
+
+Input: `1234`
+Output: `4321`
+
+```java
+int n = 1234;
+int rev = 0;
+
+while (n > 0) {
+    rev = rev * 10 + n % 10;
+    n = n / 10;
+}
+
+System.out.println(rev);
+```
+
+---
+
+## Problem 6: Check palindrome number
+
+Input: `121`
+Output: `Palindrome`
+
+```java
+int n = 121;
+int temp = n;
+int rev = 0;
+
+while (n > 0) {
+    rev = rev * 10 + n % 10;
+    n = n / 10;
+}
+
+if (rev == temp)
+    System.out.println("Palindrome");
+else
+    System.out.println("Not Palindrome");
+```
+
+---
+
+## Problem 7: Product of digits
+
+Input: `234`
+Output: `24`
+
+```java
+int n = 234;
+int product = 1;
+
+while (n > 0) {
+    product = product * (n % 10);
+    n = n / 10;
+}
+
+System.out.println(product);
+```
+
+---
+
+## Problem 8: Count even digits
+
+Input: `48291`
+Output: `2`
+
+```java
+int n = 48291;
+int count = 0;
+
+while (n > 0) {
+    int d = n % 10;
+    if (d % 2 == 0)
+        count++;
+    n = n / 10;
+}
+
+System.out.println(count);
+```
+
+---
+
+## Problem 9: Find first and last digit
+
+Input: `6789`
+Output: `First: 6 Last: 9`
+
+```java
+int n = 6789;
+int last = n % 10;
+
+while (n >= 10) {
+    n = n / 10;
+}
+
+System.out.println("First: " + n + " Last: " + last);
+```
+
+---
+
+## Problem 10: Print digits in correct order
+
+Input: `456`
+Output: `4 5 6`
+
+```java
+int n = 456;
+int temp = n;
+int div = 1;
+
+while (temp > 9) {
+    div = div * 10;
+    temp = temp / 10;
+}
+
+while (div > 0) {
+    System.out.print(n / div + " ");
+    n = n % div;
+    div = div / 10;
+}
+```
+
+---
+
+
+```
+```
 
 
 
