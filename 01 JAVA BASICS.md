@@ -382,12 +382,53 @@ while (div > 0) {
 }
 ```
 
+
 ---
 
 
+
+---
+
+## Problem 1: Infinite Loop Trap
+**Description:** The loop decreases `i` instead of increasing it, so the condition `i <= 5` is always true.  
 ```
+for (int i = 1; i <= 5; i--)
+Solution: 1, 0, -1, -2, -3, ...
+```
+## Problem 2: Post Increment Confusion
+Description: The loop increments i twice — once in the loop header and once in the print statement.
+
+```
+for (int i = 1; i <= 3; i++) 
+    System.out.print(i++ + "");
+Solution: Prints 1 3 because the extra i++ skips values.
+```
+## Problem 3: Pre Increment in Condition
+Description: The condition uses ++i, so i is incremented before checking.
 ```
 
+for (int i = 0; ++i <= 3;)
+    System.out.print(i + " ");
+Solution: Prints 1 2 3.
+
+```
+## Problem 4: Double Increment
+Description: i is incremented in both the loop header and inside the body.
+```
+
+for (int i = 1; i <= 5; i++) { 
+    i++; 
+}
+Solution: Prints 1 3 5.
+```
+## Problem 5: Empty Condition Loop
+Description: The loop has no initialization or increment in the header, only in the body.
+```
+
+int i = 0;
+for (; i < 3;) 
+    i++;
+Solution: Runs until i reaches 3, effectively iterating over 0 1 2.
 
 
 
