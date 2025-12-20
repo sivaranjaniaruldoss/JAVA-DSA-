@@ -429,8 +429,64 @@ int i = 0;
 for (; i < 3;) 
     i++;
 Solution: Runs until i reaches 3, effectively iterating over 0 1 2.
+```
+## Problem 6: Do while loop
+Write a program using a do-while loop that repeatedly asks the user to enter a positive integer.
 
+If the user enters a negative number, the program should stop.
+While the user keeps entering positive numbers, the program should calculate the sum of all positive integers entered.Finally, print the total sum when the loop ends
+```
+import java.util.Scanner;
 
+public class DoWhileSum {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int number;
+        int sum = 0;
 
----
+        
+        do {
+            System.out.print("Enter a number: ");
+            number = sc.nextInt();
+
+            if (number > 0) {
+                sum += number; 
+            }
+        } while (number >= 0); 
+
+        System.out.println("Total sum = " + sum);
+        sc.close();
+    }
+}
+```
+## Problem 7 Do while loop 
+Write a program using a do-while loop that asks the user to enter a number between 1 and 10.
+
+If the user enters a number outside this range, the program should keep asking until a valid number is entered.
+
+Once a valid number is entered, print:
+
+"You entered a valid number: X" (where X is the number).
+```
+import java.util.Scanner;
+
+public class DoWhileValidation {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int number;
+
+        
+        do {
+            System.out.print("Enter a number between 1 and 10: ");
+            number = sc.nextInt();
+
+            if (number < 1 || number > 10) {
+                System.out.println("Invalid! Try again.");
+            }
+        } while (number < 1 || number > 10);
+
+        System.out.println("You entered a valid number: " + number);
+        sc.close();
+    }
+}
 
