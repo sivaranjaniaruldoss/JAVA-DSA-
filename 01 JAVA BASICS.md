@@ -575,8 +575,8 @@ public class DiamondPattern {
 }
 ```
 ## RECURSION
-```
-```
+
+
 ## 1. Factorial of a Number
 ```
 int fact(int n) {
