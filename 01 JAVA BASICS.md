@@ -573,7 +573,44 @@ public class DiamondPattern {
         }
     }
 }
-
+```
+## RECURSION
+```
+```
+## 1. Factorial of a Number
+```
+int fact(int n) {
+    if (n == 0 || n == 1) return 1;   
+    return n * fact(n - 1);           
+}
+```
+## 2. Fibonacci Series
+```
+int fib(int n) {
+    if (n <= 1) return n;            
+    return fib(n - 1) + fib(n - 2);   
+}
+```
+## 3. Sum of Digits
+```
+int sumDigits(int n) {
+    if (n == 0) return 0;             
+    return (n % 10) + sumDigits(n / 10);
+}
+```
+## 4. Reverse a Number
+```
+int reverse(int n, int rev) {
+    if (n == 0) return rev;           // base case
+    return reverse(n / 10, rev * 10 + n % 10);
+}
+```
+## 5.Check Palindrome Number
+```
+boolean isPalindrome(int n, int rev, int temp) {
+    if (n == 0) return temp == rev;   // base case
+    return isPalindrome(n / 10, rev * 10 + n % 10, temp);
+}
 
 
 
