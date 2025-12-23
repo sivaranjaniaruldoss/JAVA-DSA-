@@ -611,6 +611,86 @@ boolean isPalindrome(int n, int rev, int temp) {
     if (n == 0) return temp == rev;   // base case
     return isPalindrome(n / 10, rev * 10 + n % 10, temp);
 }
+```
+## 6. Tower of Hanoi
+```
+void hanoi(int n, char from, char to, char aux) {
+    if (n == 1) {
+        System.out.println("Move disk 1 from " + from + " to " + to);
+        return;
+    }
+    hanoi(n - 1, from, aux, to);
+    System.out.println("Move disk " + n + " from " + from + " to " + to);
+    hanoi(n - 1, aux, to, from);
+}
+```
+## 7. Binary Tree Problems
+```
+int height(TreeNode root) {
+    if (root == null) return 0;
+    return 1 + Math.max(height(root.left), height(root.right));
+}
+```
+## 8. Print All Subsets of a String
+```
+void subsets(String s, String current, int index) {
+    if (index == s.length()) {
+        System.out.println(current);
+        return;
+    }
+   
+    subsets(s, current + s.charAt(index), index + 1);
+subsets(s, current, index + 1);
+}
+```
+## 9. Generate All Permutations of a String
+```
+void permute(String s, String prefix) {
+    if (s.length() == 0) {
+        System.out.println(prefix);
+        return;
+    }
+    for (int i = 0; i < s.length(); i++) {
+        permute(s.substring(0, i) + s.substring(i + 1), prefix + s.charAt(i));
+    }
+}
+```
+## 10. Count Paths in a Grid 
+```
+int countPaths(int m, int n) {
+    if (m == 1 || n == 1) return 1; 
+    return countPaths(m - 1, n) + countPaths(m, n - 1);
+}
+```
+## 11. N-Queens Problem
+```
+boolean solveNQueens(int board[][], int row, int n) {
+    if (row >= n) return true;
+
+    for (int col = 0; col < n; col++) {
+        if (isSafe(board, row, col, n)) {
+            board[row][col] = 1;
+            if (solveNQueens(board, row + 1, n)) return true;
+            board[row][col] = 0; 
+        }
+    }
+    return false;
+}
+```
+## 12. Subset Sum Problem
+```
+boolean subsetSum(int[] arr, int n, int sum) {
+    if (sum == 0) return true;
+    if (n == 0) return false;
+
+    if (arr[n - 1] > sum) return subsetSum(arr, n - 1, sum);
+
+    return subsetSum(arr, n - 1, sum) || subsetSum(arr, n - 1, sum - arr[n - 1]);
+}
+
+
+
+
 
 
 
