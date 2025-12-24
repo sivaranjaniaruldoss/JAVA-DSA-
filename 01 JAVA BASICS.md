@@ -688,9 +688,68 @@ boolean subsetSum(int[] arr, int n, int sum) {
     return subsetSum(arr, n - 1, sum) || subsetSum(arr, n - 1, sum - arr[n - 1]);
 }
 
+```
+## 13. Armstrong Number
+Check if a number is equal to the sum of cubes of its digits.
+```
+
+int n = 153, temp = n, sum = 0;
+while (temp > 0) {
+    int d = temp % 10;
+    sum += d * d * d;
+    temp /= 10;
+}
+System.out.println(sum == n ? "Armstrong" : "Not Armstrong");
+```
+## 14. Strong Number
+```
+Sum of factorials of digits equals the number.
 
 
+int n = 145, temp = n, sum = 0;
+while (temp > 0) {
+    int d = temp % 10;
+    int fact = 1;
+    for (int i = 1; i <= d; i++) fact *= i;
+    sum += fact;
+    temp /= 10;
+}
+System.out.println(sum == n ? "Strong Number" : "Not Strong Number");
+```
+## 15. Perfect Number
+```
+Sum of divisors equals the number.
 
-
-
+java
+int n = 28, sum = 0;
+for (int i = 1; i < n; i++) {
+    if (n % i == 0) sum += i;
+}
+System.out.println(sum == n ? "Perfect Number" : "Not Perfect Number");
+```
+## 16.Prime Factors of a Number
+```
+java
+int n = 84;
+for (int i = 2; i <= n; i++) {
+    while (n % i == 0) {
+        System.out.print(i + " ");
+        n /= i;
+    }
+}
+```
+## 17. Palindrome String
+```
+String s = "madam";
+String rev = new StringBuilder(s).reverse().toString();
+System.out.println(s.equals(rev) ? "Palindrome" : "Not Palindrome");
+```
+## 18. Anagram Check
+```
+String s1 = "listen", s2 = "silent";
+char[] a1 = s1.toCharArray();
+char[] a2 = s2.toCharArray();
+java.util.Arrays.sort(a1);
+java.util.Arrays.sort(a2);
+System.out.println(java.util.Arrays.equals(a1, a2) ? "Anagram" : "Not Anagram");
 
