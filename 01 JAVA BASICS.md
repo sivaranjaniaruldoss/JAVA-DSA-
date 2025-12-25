@@ -752,9 +752,9 @@ char[] a2 = s2.toCharArray();
 java.util.Arrays.sort(a1);
 java.util.Arrays.sort(a2);
 System.out.println(java.util.Arrays.equals(a1, a2) ? "Anagram" : "Not Anagram");
-# 🧠 Java Logic Building Problems – Set 2 (With Solutions)
 
----
+
+```
 
 ## 1️ Find Largest Digit in a Number
 
