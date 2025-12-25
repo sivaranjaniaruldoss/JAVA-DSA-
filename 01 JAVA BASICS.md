@@ -752,4 +752,50 @@ char[] a2 = s2.toCharArray();
 java.util.Arrays.sort(a1);
 java.util.Arrays.sort(a2);
 System.out.println(java.util.Arrays.equals(a1, a2) ? "Anagram" : "Not Anagram");
+# 🧠 Java Logic Building Problems – Set 2 (With Solutions)
 
+---
+
+## 1️ Find Largest Digit in a Number
+
+**Problem:**  
+Given an integer `n`, find the largest digit present in it.
+
+**Example:**  
+Input: `57249`  
+Output: `9`
+
+**Solution:**
+```java
+int n = 57249;
+int max = 0;
+
+while (n > 0) {
+    int digit = n % 10;
+    if (digit > max) {
+        max = digit;
+    }
+    n = n / 10;
+}
+
+System.out.println(max);
+```
+## Problem 2:
+```
+Calculate base^exp using loops only.
+
+Example:
+Input: 2 5
+Output: 32
+
+Solution:
+
+int base = 2;
+int exp = 5;
+int result = 1;
+
+for (int i = 1; i <= exp; i++) {
+    result = result * base;
+}
+
+System.out.println(result);
