@@ -799,3 +799,45 @@ for (int i = 1; i <= exp; i++) {
 }
 
 System.out.println(result);
+```
+## binary search
+iterative approach
+```
+public class BinarySearchIterative {
+    public static int binarySearch(int[] arr, int target) {
+        int low = 0, high = arr.length - 1;
+        while (low <= high) {
+            int mid = low + (high - low) / 2; // avoids overflow
+            if (arr[mid] == target) return mid;
+            else if (arr[mid] < target) low = mid + 1;
+            else high = mid - 1;
+        }
+        return -1; // not found
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {1, 3, 5, 7, 9, 11};
+        System.out.println(binarySearch(nums, 7));  // Output: 3
+        System.out.println(binarySearch(nums, 4));  // Output: -1
+    }
+}
+```
+Recursive Method
+```
+public class BinarySearchRecursive {
+    public static int binarySearch(int[] arr, int low, int high, int target) {
+        if (low > high) return -1;
+        int mid = low + (high - low) / 2;
+        if (arr[mid] == target) return mid;
+        else if (arr[mid] < target) 
+            return binarySearch(arr, mid + 1, high, target);
+        else 
+            return binarySearch(arr, low, mid - 1, target);
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {2, 4, 6, 8, 10, 12};
+        System.out.println(binarySearch(nums, 0, nums.length - 1, 10)); // Output: 4
+        System.out.println(binarySearch(nums, 0, nums.length - 1, 5));  // Output: -1
+    }
+}
