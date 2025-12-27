@@ -841,3 +841,54 @@ public class BinarySearchRecursive {
         System.out.println(binarySearch(nums, 0, nums.length - 1, 5));  // Output: -1
     }
 }
+```
+## Linear Search in an Array
+```
+public class LinearSearchArray {
+    public static int linearSearch(int[] arr, int target) {
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == target) {
+                return i; // return index if found
+            }
+        }
+        return -1; // not found
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {10, 25, 30, 45, 50};
+        int target = 30;
+
+        int result = linearSearch(nums, target);
+        if (result == -1) {
+            System.out.println("Element not found");
+        } else {
+            System.out.println("Element found at index " + result);
+        }
+    }
+}
+```
+##  Linear Search in a String Array
+```
+public class LinearSearchString {
+    public static int linearSearch(String[] arr, String target) {
+        target = target.toLowerCase();
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i].toLowerCase().equals(target)) {
+                return i; // return index if found
+            }
+        }
+        return -1; // not found
+    }
+
+    public static void main(String[] args) {
+        String[] fruits = {"apple", "banana", "cherry", "date"};
+        String target = "Cherry";
+
+        int result = linearSearch(fruits, target);
+        if (result == -1) {
+            System.out.println("Element not found");
+        } else {
+            System.out.println("Element found at index " + result);
+        }
+    }
+}
