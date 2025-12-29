@@ -111,45 +111,10 @@ public class AnagramCount {
 }
 ```
 
-### Complexity
 
-* Time: O(n) — single pass over each string (plus potential map overhead if non-ASCII)
-* Space: O(1) for fixed-size array (O(k) where k is alphabet size); O(u) for Unicode map (u = unique codepoints)
 
----
 
-## Notes & Best Practices
 
-* **Normalization:** Remove spaces and normalize case (`toLowerCase()`) when you want to treat `"Debit Card"` and `"Bad Credit"` as anagrams.
-* **Character set:** For English/ASCII, using an `int[128]` or `int[26]` (if only letters a–z) is fastest. For full Unicode support use code points and a `Map<Integer,Integer>`.
-* **Early exits:** Always check length equality after normalization; if lengths differ they cannot be anagrams.
-* **Security:** Avoid using `replaceAll` with user input in some security-sensitive contexts without validation (though common here).
-
----
-
-## Unit Test Examples (JUnit 5)
-
-```java
-import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.Test;
-
-public class AnagramTest {
-    @Test
-    public void testSortApproach() {
-        assertTrue(AnagramSort.areAnagrams("listen", "silent"));
-        assertFalse(AnagramSort.areAnagrams("hello", "bello"));
-    }
-
-    @Test
-    public void testCountApproach() {
-        assertTrue(AnagramCount.areAnagrams("Debit Card", "Bad Credit"));
-        assertFalse(AnagramCount.areAnagrams("apple", "pale"));
-        assertTrue(AnagramCount.areAnagrams("résumé", "sérumé"));
-    }
-}
-```
-
----
 # Problem: Sum of Suffix Numbers
 
 ## Description
