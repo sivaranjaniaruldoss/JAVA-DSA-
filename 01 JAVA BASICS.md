@@ -1029,6 +1029,35 @@ class Solution {
         return x == reversedHalf || x == reversedHalf / 10;
     }
 }
+```
+Given a sorted array of integers and a target sum, determine if there exist two numbers in the array whose sum equals the target.
+```
+public class TwoPointersSum {
+    public static boolean hasPairWithSum(int[] nums, int target) {
+        int left = 0;
+        int right = nums.length - 1;
+
+        while (left < right) {
+            int sum = nums[left] + nums[right];
+
+            if (sum == target) {
+                return true; // Pair found
+            } else if (sum < target) {
+                left++; // Increase sum
+            } else {
+                right--; // Decrease sum
+            }
+        }
+        return false; // No pair found
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {2, 7, 11, 15};
+        int target = 9;
+        System.out.println(hasPairWithSum(nums, target)); // Output: true
+    }
+}
+
 
 
 
