@@ -938,7 +938,7 @@ class Solution {
         return right - left - 1;
     }
 }
-```
+
 ## Find the largest element in an array
 ```
 public class LargestElement {
@@ -1030,7 +1030,7 @@ class Solution {
     }
 }
 ```
-Given a sorted array of integers and a target sum, determine if there exist two numbers in the array whose sum equals the target.
+## Given a sorted array of integers and a target sum, determine if there exist two numbers in the array whose sum equals the target.
 ```
 public class TwoPointersSum {
     public static boolean hasPairWithSum(int[] nums, int target) {
@@ -1057,6 +1057,38 @@ public class TwoPointersSum {
         System.out.println(hasPairWithSum(nums, target)); // Output: true
     }
 }
+```
+## Treat num1 and num2 as arrays of digits.Multiply each digit of num1 with each digit of num2.Store partial results in an array (pos) where index represents place value.Handle carry properly.Finally, build the result string, skipping leading zeros.
+```
+class Solution {
+    public String multiply(String num1, String num2) {
+        if (num1.equals("0") || num2.equals("0")) return "0";
+
+        int m = num1.length(), n = num2.length();
+        int[] pos = new int[m + n]; // result can be at most m+n digits
+
+        for (int i = m - 1; i >= 0; i--) {
+            for (int j = n - 1; j >= 0; j--) {
+                int mul = (num1.charAt(i) - '0') * (num2.charAt(j) - '0');
+                int p1 = i + j, p2 = i + j + 1;
+                int sum = mul + pos[p2];
+
+                pos[p1] += sum / 10;   // carry
+                pos[p2] = sum % 10;    // remainder
+            }
+        }
+
+        // build result string
+        StringBuilder sb = new StringBuilder();
+        for (int p : pos) {
+            if (!(sb.length() == 0 && p == 0)) { // skip leading zeros
+                sb.append(p);
+            }
+        }
+        return sb.toString();
+    }
+}
+
 
 
 
