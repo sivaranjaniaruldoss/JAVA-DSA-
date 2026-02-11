@@ -157,7 +157,7 @@ public class SuffixSum {
 ## Problem 1: Print numbers from 1 to N
 
 Input: `5`  
-Output: `1 2 3 4 5`
+Output: 1 2 3 4 5
 
 ```java
 int n = 5;
