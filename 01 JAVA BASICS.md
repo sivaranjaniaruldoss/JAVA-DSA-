@@ -173,8 +173,8 @@ while (i <= n) {
 
 ## Problem 2: Print numbers from N to 1
 
-Input: `5`
-Output: `5 4 3 2 1`
+Input: `6`
+Output: ` 6 5 4 3 2 1`
 
 ```java
 int n = 5;
